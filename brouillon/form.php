@@ -22,12 +22,15 @@
             </div>
 
             <div class="col-6">
-                <form method="get" action="form.php" class="form-inline my-4 my-lg-0 rn-search-input">
-                    <input class="form-control mr-sm-4" type="search"name="query" placeholder="Search" 
+                <form method="post" action="form.php" class="form-inline my-4 my-lg-0 rn-search-input">
+                    <input class="form-control mr-sm-4" type="search" name="search" id="search" placeholder="Search" 
                     aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0 rn-search" type="submit">Search</button>
+                    <div class="rn-result" id="display"></div>
                 </form>
-                <?php require "search.php"; ?>
+                <?php require "search.php";
+                   
+                ?>
             </div>
         </nav>
     </div>
@@ -52,18 +55,11 @@
                     <tr>
                         <th>N</th>
                         <th>Tasks</th>
-                        <th>Action</th>
+                        <th>Fait ou pas</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td><button type="submit"><i class="fa fa-check-circle" aria-hidden="true"></i></button></td>
-                        <td class="rn-task"> tFirst</td>
-                        <td class="rn-delete">
-                            <a href="#">x</a>
-                        </td>
-                    </tr>
                     <tr>
                         <?php
                             require "view.php";
@@ -75,10 +71,10 @@
         </div>
     </div>
 
-        <!--liens javascript-->
-        <script type="text/javascript" src="../js/jquery-v3x.js"></script>
-        <script type="text/javascript" src="../bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="../fontawesome-free-5.6.3-web/js/fontawesome.min.js"></script>
-        <script type="text/javascript" src="../js/script.js"></script>
+    <!--liens javascript-->
+    <script type="text/javascript" src="../js/jquery-v3x.js"></script>
+    <script type="text/javascript" src="../bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../fontawesome-free-5.6.3-web/js/fontawesome.min.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
 </body>
 </html>

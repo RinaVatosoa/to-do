@@ -11,19 +11,24 @@
                         echo '<tr>
                             <td>
                                 <form method="post" action="index.php">
-                                    <input type="checkbox" name="check" class="rn-checkbox" value="yes">
+                                    <input type="checkbox" name="check" class="rn-checkbox" value='; 
+                                    echo $row["val"];
+                                    echo '>
                                     </input>
                                 </form>
                             </td>';
-                            if(isset($_POST["check"]) === "yes")
-                            {
-                                echo ' checked="checked" ';
+                            $checked = 0;
+                            if (!empty($_POST['check'])) {
+                                $checked = 1;
+                            
+                            mysqli_query($conn, "UPDATE tasks SET val = '1' WHERE id=?");
                             }
-                        
-                            echo '<td>' .$row["task"]. '</td>
-                            <td>'. $row["val"] .'</td>';
+
+                            echo '<td class="task">' .$row["task"]. '</td>
+                            <td> <div class="val">'. $row["val"] .'</div></td>';
+
+                            require "check.php";
                         echo '</tr>';
-                        require "check.php";
                     }
                 echo '</tbody>                            
             </table>';

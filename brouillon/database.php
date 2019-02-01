@@ -13,8 +13,7 @@
             {
                 echo "connected";
             }
-        }
-        
+        }  
     }
     $conn = new Database;
     

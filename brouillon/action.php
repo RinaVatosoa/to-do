@@ -1,7 +1,7 @@
 <?php
 //use db\Database;
-//class DataOperation extends Database
-class DataOperation
+class DataOperation extends Database
+//class DataOperation
 {
     public $_rn_conn;
     public $sql;
@@ -21,7 +21,7 @@ class DataOperation
     
     public function insert_record( $table, $fields = array())
     {
-        /*
+        /**
         *INSERT INTO tasks('task', 'val') VALUES ($task);
         */
         
