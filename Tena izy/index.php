@@ -1,7 +1,7 @@
 <?php
  include 'insert.php';  
- $object = new InsertTask();  
- ?>  
+ $object = new InsertTask();
+ ?>
  <html>  
       <head>  
         <title>PHP POO to-do</title>  
@@ -30,7 +30,7 @@
                                 <input type="text" name="task" id="task" class="form control col-8 rn-task-input" />
                                 <input type="hidden" name="action" id="action col-2"/>
                                 <input type="submit" name="button_action" id="button_action submit"
-                                    class="btn btn-secondary " value="Insert" />
+                                    class="btn btn-secondary" value="Insert" />
                             </div>
                             </form>  
                         </div>  
@@ -41,9 +41,9 @@
                 </div>     
            </div>
 
-            <script type="text/javascript" src="../js/jquery-v3x.js"></script>
-            <script type="text/javascript" src="../bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
-            <script type="text/javascript" src="../js/form.js"></script>
+           <script type="text/javascript" src="../js/jquery-v3x.js"></script>
+           <script type="text/javascript" src="../bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
+           <script type="text/javascript" src="../js/form.js"></script>
            <script type="text/javascript" src="../js/check.js"></script>
 
       </body>

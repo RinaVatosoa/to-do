@@ -29,7 +29,6 @@ $(document).ready(function(){
                 success:function(data)
                 {
                     console.log(data)
-                    alert(data);
                     $('#todo-form')[0].reset();
                     load_data();
                 }
@@ -40,4 +39,27 @@ $(document).ready(function(){
             alert("Both Fields are Required");
         }
     });
+
+
+    /*$('.rn-checkbox').click(function () {
+        console.log("hehe");
+    });
+
+    $('.rn-checkbox').on('change',function(){
+        console.log("ato");
+        $( '.val' ).text("0");
+        var task_id = $('.id').val;
+        console.log(task_id);
+        if($(".rn-checkbox").prop('checked')){
+            $(".rn-checkbox").attr('value', 'true');
+            console.log("true");
+            $( '.val' ).html("fait");
+            $('.task').css('text-decoration' , 'line-through');
+        }else{
+            $(".rn-checkbox").attr('value', 'false');
+            console.log("false");
+            $( '.val' ).text("0");
+            $('.task').css('text-decoration' , 'none');
+        }
+    });*/
 });
