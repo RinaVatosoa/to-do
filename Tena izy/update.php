@@ -13,27 +13,20 @@
 
     print_r( $_POST);
 
+    $id = '';
+    if( isset( $_POST['id'])) {
+        $id = $_POST['id'];
+    }
     $newValue = mysqli_real_escape_string($conn, $_POST['val']);
 
-    if(isset($_POST["val"])) {
-        $sql = "UPDATE tasks SET val='$newValue' WHERE id='25'";
-        if($conn->query($sql) === TRUE){
+    if (isset($_POST["val"])) {
+
+        $sql = "UPDATE tasks SET val='$newValue' WHERE id='$id'";
+        if ($conn->query($sql) === TRUE) {
             echo "Success";
         } else {
-            echo "error" . $sql . "<br>".$conn->error;
+            echo "error" . $sql . "<br>" . $conn->error;
         }
     }
 
-    /*
-      $newValue = mysqli_real_escape_string($conn, $_POST['val']);
-
-    if(isset($_POST["val"])) {
-        $sql = "UPDATE tasks SET val='$newValue' WHERE id='2'";
-        if($conn->query($sql) === TRUE){
-            echo "Success";
-        } else {
-            echo "error" . $sql . "<br>".$conn->error;
-        }
-    }
-    */
 ?>
