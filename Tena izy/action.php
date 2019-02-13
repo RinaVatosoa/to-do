@@ -1,6 +1,6 @@
 <?php
 include 'insert.php';
-$object = new InsertTask();
+$object = new Database();
 if(isset($_POST["action"]))
 {
     if($_POST["action"] == "Load")

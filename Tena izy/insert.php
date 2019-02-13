@@ -1,5 +1,5 @@
 <?php  
- class InsertTask  
+ class Database
  {  
      public $connect;  
      private $host = "localhost";  
@@ -43,16 +43,19 @@
              $converted_res = ($status) ? 'Fait' : 'Non fait';
 
              $output .= '  
-                <tr>     
+                <tr>
                     <td>
                         <form method="post" action="index.php">
-                            <input type="checkbox" name="check" class="rn-checkbox" value="">
+                            <input type="checkbox" name="check" class="rn-checkbox" value="" >
                         </form>
                     </td>  
                     <td class="id">'.$row->id.'</td>  
                     <td class="task">' .$row->task.'</td>  
                     <td class="val">'.$converted_res.'</td>
-                </tr>  
+                    <td>';
+                        echo '<button><a href="delete.php">\'.$row ->id. \'</a>\</button>';
+                    echo '</td>
+                </tr>
                 ';
          }
          $output .= '</table>';
