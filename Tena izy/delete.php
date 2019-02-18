@@ -71,16 +71,15 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 <head>
     <meta charset="UTF-8">
     <title>View Record</title>
-    <link rel="stylesheet" href="bootstrap-4.2.1-dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="fontawesome-free-5.6.3-web/css/all.css"/>
+    <link rel="stylesheet" href="../bootstrap-4.2.1-dist/css/bootstrap.min.css"/>
 </head>
 <body>
 <div class="wrapper">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <div class="page-header">
-                    <h3 class="text-secondary">Delete information</h3>
+                <div class="page-header" text-center>
+                    <h3 class="text-secondary">Delete task</h3>
                 </div>
                 <form action="delete.php" method="post">
                     <div class="alert alert-danger" role="alert">
@@ -89,7 +88,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                             echo trim($_GET["id"]);
                         ?>"
                         />
-                        <p>Are you sure you want to delete this person?</p><br>
+                        <p>Are you sure you want to delete this task ?</p><br>
                         <p>
                             <input type="submit" value="Yes" class="btn btn-danger">
                             <a href="index.php" class="btn btn-default">No</a>
@@ -102,7 +101,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 </div>
 
 <!--liens javascript-->
-<script type="text/javascript" src="js/jquery-v3x.js"></script>
-<script type="text/javascript" src="bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/jquery-v3x.js"></script>
+<script type="text/javascript" src="../bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
 </body>
 </html>

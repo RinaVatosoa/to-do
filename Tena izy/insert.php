@@ -17,7 +17,7 @@
      }  
      public function execute_query($query)  
      {  
-          return mysqli_query($this->connect, $query);  
+          return mysqli_query($this->connect, $query);
      }
 
      public function get_data_in_table($query)  
@@ -26,14 +26,16 @@
          $result = $this->execute_query($query);
 
          $output .= '  
-            <script src="../js/check.js"></script>
+           <script src="../js/check.js"></script>
+           <script type="text/javascript" src="../fontawesome-free-5.6.3-web/js/all.js">
+           </script>
            <table class="table table-bordered table-striped">  
                 <tr>  
-                     
-                     <th width="35%">Checking</th>  
-                     <th width="35%">id</th>  
+                    <th width="35%">Checking</th>  
+                    <th width="35%">id</th>  
                     <th width="35%">Tasks</th>  
                     <th width="10%">Did?</th>
+                    <th width="10%">Action</th>
                 </tr>  
            ';
 
@@ -52,15 +54,23 @@
                     <td class="id">'.$row->id.'</td>  
                     <td class="task">' .$row->task.'</td>  
                     <td class="val">'.$converted_res.'</td>
-                    <td>';
-                        echo '<button><a href="delete.php">\'.$row ->id. \'</a>\</button>';
-                    echo '</td>
+                    <td class="action">
+                        <a href=" delete.php?id= '.$row ->id.' "  title="Delete" data-toggle="tooltip">
+                          <span class="fas fa-trash-alt"></span>
+                        </a>
+                    </td>
                 </tr>
                 ';
          }
          $output .= '</table>';
          return $output;
-     }       
+     }
 }
 
 ?>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/view.css"/>
+    </head>
+</html>
