@@ -1,4 +1,4 @@
 <?php
-    include 'insert.php';
+    include 'database.php';
     $object = new Database();
 ?>

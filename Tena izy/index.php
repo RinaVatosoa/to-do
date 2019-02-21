@@ -1,9 +1,4 @@
-<?php
- include 'insert.php';
- $object = new Database();
- ?>
-
- <html>  
+ <html>
       <head>  
         <title>PHP POO to-do</title>  
         <link rel="stylesheet" type="text/css" href="../bootstrap-4.2.1-dist/css/bootstrap.min.css" />
@@ -26,26 +21,26 @@
                             data-target="#todo-collapse">Add task
                         </button><br /><br />
                         <div id="todo-collapse" class="collapse col-12">  
-                            <form method="post" id="todo-form">  
-                            <div class="row">
-                                <input type="text" name="task" id="task" class="form control col-8 rn-task-input" />
-                                <input type="hidden" name="action" id="action col-2"/>
-                                <input type="submit" name="button_action" id="button_action submit"
-                                    class="btn btn-secondary" value="Insert" />
-                            </div>
+                            <form method="post" id="todo-form">
+                                <div class="row">
+                                    <input type="text" name="task" id="task" class="form control col-8 rn-task-input" />
+                                    <div>
+                                        <input type="hidden" name="action" id="action col-2"/>
+                                        <input type="submit" name="button_action " id="button_action submit"
+                                               class="btn btn-secondary rn-submit" value="Insert" />
+                                    </div>
+                                </div>
                             </form>  
                         </div>  
                         <br /> 
                         <div id="task-table" class="table-responsive">  
                         </div> 
                     </div>
-                </div>     
+                </div>
            </div>
 
            <script type="text/javascript" src="../js/jquery-v3x.js"></script>
            <script type="text/javascript" src="../bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
            <script type="text/javascript" src="../js/form.js"></script>
-           <script type="text/javascript" src="../js/check.js"></script>
-
       </body>
  </html>

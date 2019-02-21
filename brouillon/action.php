@@ -1,7 +1,7 @@
 <?php
-//use db\Database;
-class DataOperation extends Database
-//class DataOperation
+use db\Database;
+
+class DataOperation
 {
     public $_rn_conn;
     public $sql;

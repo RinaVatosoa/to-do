@@ -14,22 +14,66 @@ $(document).ready(function(){
             }
         });
     }
-    $('#todo-form').on('submit', function(event){
+    $('#todo-form').submit(function(event){
         event.preventDefault();
-        var task = $('#task').val();
 
-        if(task != '')
+        /*var data, xhr;
+        data = new FormData();
+        data.append( 'task', $( '#task' ).val() );
+        console.log(data);
+
+        xhr = new XMLHttpRequest();
+        xhr.open('POST', 'action.php', true);
+        xhr.onload = function(){
+            console.log(xhr.responseText);
+        }
+        xhr.send(data);  */
+
+        var rn_task = $('#task').val();
+        console.log(rn_task);
+
+        $.ajax({
+            url:"action.php",
+            method:"POST",
+            data: new FormData(this),
+            cache : false,
+            contentType: false,
+            processData: false,
+            success:function(data)
+            {
+                console.log(data);
+                $("#todo-form")[0].reset();
+                load_data();
+            }
+        })
+    });
+});
+
+/*
+
+xhr = new XMLHttpRequest();
+
+        xhr.open( 'POST', 'action.php', true );
+        xhr.onreadystatechange = function ( response ) {};
+        xhr.send( data );
+
+rn_task = $('#task').val();
+ console.log(rn_task);
+        console.log(data);
+
+        if(rn_task != '')
         {
             $.ajax({
                 url:"action.php",
                 method:"POST",
-                data:new FormData(this),
-                contentType:false,
-                processData:false,
+                data:{ task : rn_task },
+                cache : false,
+                 contentType: 'multipart/form-data',
+                 processData: false,
                 success:function(data)
                 {
-                    console.log(data)
-                    $('#todo-form')[0].reset();
+                    console.log(data);
+
                     load_data();
                 }
             })
@@ -37,29 +81,4 @@ $(document).ready(function(){
         else
         {
             alert("Both Fields are Required");
-        }
-    });
-
-
-    /*$('.rn-checkbox').click(function () {
-        console.log("hehe");
-    });
-
-    $('.rn-checkbox').on('change',function(){
-        console.log("ato");
-        $( '.val' ).text("0");
-        var task_id = $('.id').val;
-        console.log(task_id);
-        if($(".rn-checkbox").prop('checked')){
-            $(".rn-checkbox").attr('value', 'true');
-            console.log("true");
-            $( '.val' ).html("fait");
-            $('.task').css('text-decoration' , 'line-through');
-        }else{
-            $(".rn-checkbox").attr('value', 'false');
-            console.log("false");
-            $( '.val' ).text("0");
-            $('.task').css('text-decoration' , 'none');
-        }
-    });*/
-});
+        }*/

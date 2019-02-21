@@ -72,12 +72,13 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     <meta charset="UTF-8">
     <title>View Record</title>
     <link rel="stylesheet" href="../bootstrap-4.2.1-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/delete.css">
 </head>
 <body>
 <div class="wrapper">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8 rn-row-delete">
                 <div class="page-header" text-center>
                     <h3 class="text-secondary">Delete task</h3>
                 </div>

@@ -1,23 +1,33 @@
 <?php
-include 'insert.php';
+include 'database.php';
 $object = new Database();
-if(isset($_POST["action"]))
+
+if( isset( $_POST["action"] ) )
 {
+
     if($_POST["action"] == "Load")
     {
         echo $object->get_data_in_table("SELECT * FROM tasks ");
     }
-    if($_POST["action"] == "Insert")
+
+    if( isset($_POST["action"]) == "Insert")
     {
-        $task = mysqli_real_escape_string($object->connect, $_POST["task"]);
-        $check = mysqli_real_escape_string($object->connect, $_POST["check"]);
-        $query = "  
+        if ( isset( $_POST["task"]))
+        {
+            $task = mysqli_real_escape_string($object->connect, $_POST['task']);
+        }
+
+        if ( isset( $_POST["task"]) )
+        {
+            $query = "  
            INSERT INTO tasks  
-           (task, val )   
-           VALUES ('".$task."', '".$check."')  
+           (task )   
+           VALUES ('" .$task. "')
            ";
-        $object->execute_query($query);
-        echo 'Data Inserted';
+            $object->execute_query($query);
+            echo 'Data Inserted';
+        }
+
     }
 }
 ?>
